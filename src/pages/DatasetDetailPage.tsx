@@ -1,0 +1,142 @@
+import { useState, type ReactNode } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import datasetsJson from '../data/datasets.json';
+import type { Dataset } from '../types/dataset';
+import { formatAccessType, formatDate, formatSampleSize } from '../lib/filters';
+import { AccessBadge } from '../components/SearchBar';
+
+const datasets = datasetsJson as Dataset[];
+
+function MetadataRow({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <div className="metadata-row">
+      <dt>{label}</dt>
+      <dd>{children}</dd>
+    </div>
+  );
+}
+
+export default function DatasetDetailPage() {
+  const { id } = useParams<{ id: string }>();
+  const dataset = datasets.find((d) => d.id === id);
+  const [copied, setCopied] = useState(false);
+
+  if (!dataset) {
+    return (
+      <div className="container detail-page">
+        <div className="empty-state">
+          <h2>Dataset not found</h2>
+          <p>The requested dataset could not be located in this catalog.</p>
+          <Link to="/" className="primary-button">
+            Back to explore
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const copyCitation = async () => {
+    try {
+      await navigator.clipboard.writeText(dataset.citation);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  };
+
+  return (
+    <div className="container detail-page">
+      <nav className="breadcrumb" aria-label="Breadcrumb">
+        <Link to="/">Explore</Link>
+        <span aria-hidden="true">/</span>
+        <span>{dataset.name}</span>
+      </nav>
+
+      <header className="detail-header">
+        <div>
+          <h1>{dataset.name}</h1>
+          <p className="detail-lead">{dataset.short_description}</p>
+        </div>
+        <AccessBadge accessType={dataset.access_type} />
+      </header>
+
+      <div className="detail-actions">
+        <a href={dataset.url} className="primary-button" target="_blank" rel="noopener noreferrer">
+          Open dataset source
+        </a>
+        <button type="button" className="secondary-button" onClick={copyCitation}>
+          {copied ? 'Citation copied' : 'Copy citation'}
+        </button>
+      </div>
+
+      <div className="detail-grid">
+        <section className="detail-section">
+          <h2>Overview</h2>
+          <dl className="metadata-list">
+            <MetadataRow label="Topics">
+              <div className="tag-row">
+                {dataset.topics.map((t) => (
+                  <span key={t} className="tag">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </MetadataRow>
+            <MetadataRow label="Domains">
+              {dataset.domains.join(', ')}
+            </MetadataRow>
+            <MetadataRow label="Modalities">
+              {dataset.modalities.join(', ')}
+            </MetadataRow>
+            <MetadataRow label="Tags">
+              <div className="tag-row">
+                {dataset.tags.map((t) => (
+                  <span key={t} className="tag muted">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </MetadataRow>
+            <MetadataRow label="Notes">{dataset.notes}</MetadataRow>
+            <MetadataRow label="Limitations">{dataset.limitations}</MetadataRow>
+          </dl>
+        </section>
+
+        <section className="detail-section">
+          <h2>Access &amp; provenance</h2>
+          <dl className="metadata-list">
+            <MetadataRow label="Access type">{formatAccessType(dataset.access_type)}</MetadataRow>
+            <MetadataRow label="License">{dataset.license}</MetadataRow>
+            <MetadataRow label="Repository">{dataset.repository}</MetadataRow>
+            <MetadataRow label="Data formats">{dataset.data_format.join(', ')}</MetadataRow>
+            <MetadataRow label="URL">
+              <a href={dataset.url} target="_blank" rel="noopener noreferrer">
+                {dataset.url}
+              </a>
+            </MetadataRow>
+            <MetadataRow label="Last verified">{formatDate(dataset.last_verified)}</MetadataRow>
+          </dl>
+        </section>
+
+        <section className="detail-section">
+          <h2>Study design</h2>
+          <dl className="metadata-list">
+            <MetadataRow label="Country / region">{dataset.country_or_region}</MetadataRow>
+            <MetadataRow label="Population">{dataset.population}</MetadataRow>
+            <MetadataRow label="Human participants">
+              {dataset.human_participants ? 'Yes' : 'No'}
+            </MetadataRow>
+            <MetadataRow label="Sample size">{formatSampleSize(dataset.sample_size)}</MetadataRow>
+            <MetadataRow label="Longitudinal">{dataset.longitudinal ? 'Yes' : 'No'}</MetadataRow>
+          </dl>
+        </section>
+
+        <section className="detail-section full-width">
+          <h2>Citation</h2>
+          <blockquote className="citation-block">{dataset.citation}</blockquote>
+        </section>
+      </div>
+    </div>
+  );
+}

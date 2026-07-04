@@ -1,0 +1,16 @@
+{
+  "name": "OpenDataset Explorer",
+  "short_name": "ODE",
+  "description": "Discover open-access research datasets",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#1a5f7a",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
