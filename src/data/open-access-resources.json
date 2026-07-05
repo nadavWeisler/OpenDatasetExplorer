@@ -1,0 +1,32 @@
+[
+  {
+    "name": "re3data.org",
+    "url": "https://www.re3data.org/",
+    "description": "Global registry of research data repositories across disciplines."
+  },
+  {
+    "name": "FAIRsharing",
+    "url": "https://fairsharing.org/",
+    "description": "Curated registry of data and metadata standards, databases, and policies."
+  },
+  {
+    "name": "Google Dataset Search",
+    "url": "https://datasetsearch.research.google.com/",
+    "description": "Search engine for datasets published across the web."
+  },
+  {
+    "name": "DataCite Search",
+    "url": "https://search.datacite.org/",
+    "description": "Find research outputs and datasets with DOIs registered via DataCite."
+  },
+  {
+    "name": "NIH Data Sharing Repositories",
+    "url": "https://sharing.nih.gov/data-management-and-sharing-policy/sharing-nih-supported-research-data/repositories-for-sharing-scientific-data",
+    "description": "NIH-curated list of repositories for sharing scientific data."
+  },
+  {
+    "name": "EU Open Data Portal",
+    "url": "https://data.europa.eu/",
+    "description": "European Union open data portal for public-sector datasets."
+  }
+]

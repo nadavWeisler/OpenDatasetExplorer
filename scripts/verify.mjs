@@ -87,4 +87,24 @@ assert(
 );
 assert(openResults.length > 0, 'Open access filter returns results');
 
+const osfResults = searchDatasets('OSF');
+assert(
+  osfResults.some((d) => d.id === 'osf'),
+  'Search "OSF" returns Open Science Framework',
+);
+
+const openScienceResults = searchDatasets('open science');
+assert(
+  openScienceResults.some((d) => d.id === 'osf'),
+  'Search "open science" returns OSF',
+);
+assert(
+  openScienceResults.some((d) => d.id === 'zenodo'),
+  'Search "open science" returns Zenodo',
+);
+
+const osfEntry = datasets.find((d) => d.id === 'osf');
+assert(osfEntry, 'OSF entry exists in catalog');
+assert(Array.isArray(osfEntry.see_also) && osfEntry.see_also.length > 0, 'OSF entry has see_also links');
+
 console.log('\nAll acceptance checks passed.');

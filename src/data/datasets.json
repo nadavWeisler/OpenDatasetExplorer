@@ -3,9 +3,23 @@
     "id": "uk-biobank",
     "name": "UK Biobank",
     "short_description": "Large-scale biomedical database with genetic, imaging, and health records from UK volunteers.",
-    "topics": ["genetics", "epidemiology", "mental health", "depression", "cardiovascular disease"],
-    "domains": ["biomedical", "population health"],
-    "modalities": ["genomics", "MRI", "questionnaire", "EHR"],
+    "topics": [
+      "genetics",
+      "epidemiology",
+      "mental health",
+      "depression",
+      "cardiovascular disease"
+    ],
+    "domains": [
+      "biomedical",
+      "population health"
+    ],
+    "modalities": [
+      "genomics",
+      "MRI",
+      "questionnaire",
+      "EHR"
+    ],
     "country_or_region": "United Kingdom",
     "population": "Adults aged 40–69 recruited across the UK",
     "human_participants": true,
@@ -13,12 +27,22 @@
     "longitudinal": true,
     "access_type": "application_required",
     "license": "UK Biobank Access Policy",
-    "data_format": ["CSV", "VCF", "NIfTI", "DICOM"],
+    "data_format": [
+      "CSV",
+      "VCF",
+      "NIfTI",
+      "DICOM"
+    ],
     "repository": "UK Biobank",
     "url": "https://www.ukbiobank.ac.uk/",
     "citation": "Sudlow C, et al. UK Biobank: An Open Access Resource for Identifying the Causes of a Wide Range of Complex Diseases of Middle and Old Age. PLoS Med. 2015;12(3):e1001779.",
     "last_verified": "2026-03-01",
-    "tags": ["cohort", "biobank", "depression", "longitudinal"],
+    "tags": [
+      "cohort",
+      "biobank",
+      "depression",
+      "longitudinal"
+    ],
     "notes": "Approved researchers must register and submit a research proposal. Imaging and genetic subsets are available.",
     "limitations": "Not fully open; access requires approval. Primarily UK population."
   },
@@ -26,9 +50,23 @@
     "id": "all-of-us",
     "name": "All of Us Research Program",
     "short_description": "US precision-medicine cohort integrating EHR, surveys, wearables, and genomics from diverse participants.",
-    "topics": ["precision medicine", "mental health", "depression", "genomics", "health disparities"],
-    "domains": ["biomedical", "clinical research"],
-    "modalities": ["genomics", "EHR", "wearables", "questionnaire"],
+    "topics": [
+      "precision medicine",
+      "mental health",
+      "depression",
+      "genomics",
+      "health disparities"
+    ],
+    "domains": [
+      "biomedical",
+      "clinical research"
+    ],
+    "modalities": [
+      "genomics",
+      "EHR",
+      "wearables",
+      "questionnaire"
+    ],
     "country_or_region": "United States",
     "population": "US adults and children from diverse backgrounds",
     "human_participants": true,
@@ -36,12 +74,22 @@
     "longitudinal": true,
     "access_type": "application_required",
     "license": "All of Us Data Use Agreement",
-    "data_format": ["CSV", "VCF", "FHIR", "OMOP"],
+    "data_format": [
+      "CSV",
+      "VCF",
+      "FHIR",
+      "OMOP"
+    ],
     "repository": "All of Us Researcher Workbench",
     "url": "https://allofus.nih.gov/",
     "citation": "All of Us Research Program Investigators. The \"All of Us\" Research Program. N Engl J Med. 2019;381(7):668-676.",
     "last_verified": "2026-03-01",
-    "tags": ["NIH", "cohort", "depression", "diversity"],
+    "tags": [
+      "NIH",
+      "cohort",
+      "depression",
+      "diversity"
+    ],
     "notes": "Researchers register via the Researcher Workbench. Tiered data access with privacy protections.",
     "limitations": "Application and training required. Some data tiers have additional restrictions."
   },
@@ -49,9 +97,23 @@
     "id": "openneuro",
     "name": "OpenNeuro",
     "short_description": "Open platform for sharing neuroimaging datasets including MRI, fMRI, EEG, and MEG studies.",
-    "topics": ["neuroimaging", "neuroscience", "brain mapping", "cognitive neuroscience"],
-    "domains": ["neuroscience", "neuroimaging"],
-    "modalities": ["MRI", "fMRI", "EEG", "MEG", "PET"],
+    "topics": [
+      "neuroimaging",
+      "neuroscience",
+      "brain mapping",
+      "cognitive neuroscience"
+    ],
+    "domains": [
+      "neuroscience",
+      "neuroimaging"
+    ],
+    "modalities": [
+      "MRI",
+      "fMRI",
+      "EEG",
+      "MEG",
+      "PET"
+    ],
     "country_or_region": "International",
     "population": "Varies by study; human neuroimaging participants",
     "human_participants": true,
@@ -59,12 +121,21 @@
     "longitudinal": false,
     "access_type": "open_access",
     "license": "CC0 / study-specific (see dataset)",
-    "data_format": ["BIDS", "NIfTI", "JSON"],
+    "data_format": [
+      "BIDS",
+      "NIfTI",
+      "JSON"
+    ],
     "repository": "OpenNeuro",
     "url": "https://openneuro.org/",
     "citation": "Markiewicz CJ, et al. The OpenNeuro resource for brain imaging data collected in the wild. Sci Data. 2021;8(1):304.",
     "last_verified": "2026-03-01",
-    "tags": ["MRI", "fMRI", "BIDS", "open neuroimaging"],
+    "tags": [
+      "MRI",
+      "fMRI",
+      "BIDS",
+      "open neuroimaging"
+    ],
     "notes": "Individual datasets may have additional consent or usage restrictions noted on their pages.",
     "limitations": "Aggregate sample size varies; each dataset is separate. License may differ per upload."
   },
@@ -72,9 +143,22 @@
     "id": "physionet",
     "name": "PhysioNet",
     "short_description": "Repository of physiological signals and clinical time-series data for research and education.",
-    "topics": ["physiology", "cardiology", "critical care", "wearables"],
-    "domains": ["biomedical", "clinical informatics"],
-    "modalities": ["ECG", "waveforms", "time series", "clinical notes"],
+    "topics": [
+      "physiology",
+      "cardiology",
+      "critical care",
+      "wearables"
+    ],
+    "domains": [
+      "biomedical",
+      "clinical informatics"
+    ],
+    "modalities": [
+      "ECG",
+      "waveforms",
+      "time series",
+      "clinical notes"
+    ],
     "country_or_region": "International",
     "population": "Hospital patients and healthy volunteers (study-dependent)",
     "human_participants": true,
@@ -82,12 +166,21 @@
     "longitudinal": false,
     "access_type": "open_access",
     "license": "Open Data Commons / study-specific",
-    "data_format": ["WFDB", "MAT", "CSV", "EDF"],
+    "data_format": [
+      "WFDB",
+      "MAT",
+      "CSV",
+      "EDF"
+    ],
     "repository": "PhysioNet",
     "url": "https://physionet.org/",
     "citation": "Goldberger AL, et al. PhysioBank, PhysioToolkit, and PhysioNet. Circulation. 2000;101(23):e215-e220.",
     "last_verified": "2026-03-01",
-    "tags": ["ECG", "ICU", "waveforms"],
+    "tags": [
+      "ECG",
+      "ICU",
+      "waveforms"
+    ],
     "notes": "Some restricted databases require credentialing (e.g., MIMIC-IV).",
     "limitations": "Not all databases are fully open; check per-database access requirements."
   },
@@ -95,9 +188,20 @@
     "id": "harvard-dataverse",
     "name": "Harvard Dataverse",
     "short_description": "General-purpose research data repository hosted by Harvard for depositing and discovering datasets.",
-    "topics": ["open science", "data sharing", "reproducibility"],
-    "domains": ["multidisciplinary"],
-    "modalities": ["tabular", "text", "images", "code"],
+    "topics": [
+      "open science",
+      "data sharing",
+      "reproducibility"
+    ],
+    "domains": [
+      "multidisciplinary"
+    ],
+    "modalities": [
+      "tabular",
+      "text",
+      "images",
+      "code"
+    ],
     "country_or_region": "International",
     "population": "Varies by deposited dataset",
     "human_participants": false,
@@ -105,22 +209,56 @@
     "longitudinal": false,
     "access_type": "open_access",
     "license": "Varies by dataset (CC0, CC-BY, custom)",
-    "data_format": ["CSV", "SPSS", "Stata", "R", "PDF", "ZIP"],
+    "data_format": [
+      "CSV",
+      "SPSS",
+      "Stata",
+      "R",
+      "PDF",
+      "ZIP"
+    ],
     "repository": "Harvard Dataverse",
     "url": "https://dataverse.harvard.edu/",
     "citation": "Harvard Dataverse. https://dataverse.harvard.edu/ Accessed 2026-03-01.",
     "last_verified": "2026-03-01",
-    "tags": ["repository", "dataverse", "FAIR"],
+    "tags": [
+      "repository",
+      "dataverse",
+      "FAIR"
+    ],
     "notes": "A hosting platform; metadata and licenses are set by depositors.",
-    "limitations": "Quality and openness vary by individual dataset."
+    "limitations": "Quality and openness vary by individual dataset.",
+    "see_also": [
+      {
+        "id": "osf",
+        "name": "Open Science Framework (OSF)",
+        "description": "Open platform for managing and sharing research projects."
+      },
+      {
+        "id": "zenodo",
+        "name": "Zenodo",
+        "description": "Open repository for datasets, software, and publications."
+      }
+    ]
   },
   {
     "id": "zenodo",
     "name": "Zenodo",
     "short_description": "CERN-operated open repository for research outputs, datasets, and software across disciplines.",
-    "topics": ["open science", "data sharing", "reproducibility"],
-    "domains": ["multidisciplinary"],
-    "modalities": ["tabular", "text", "images", "software"],
+    "topics": [
+      "open science",
+      "data sharing",
+      "reproducibility"
+    ],
+    "domains": [
+      "multidisciplinary"
+    ],
+    "modalities": [
+      "tabular",
+      "text",
+      "images",
+      "software"
+    ],
     "country_or_region": "International",
     "population": "Varies by record",
     "human_participants": false,
@@ -128,22 +266,60 @@
     "longitudinal": false,
     "access_type": "open_access",
     "license": "Varies (CC0, CC-BY, etc.)",
-    "data_format": ["CSV", "JSON", "ZIP", "PDF"],
+    "data_format": [
+      "CSV",
+      "JSON",
+      "ZIP",
+      "PDF"
+    ],
     "repository": "Zenodo",
     "url": "https://zenodo.org/",
     "citation": "European Organization for Nuclear Research (CERN). Zenodo. https://zenodo.org/ Accessed 2026-03-01.",
     "last_verified": "2026-03-01",
-    "tags": ["repository", "DOI", "FAIR"],
+    "tags": [
+      "repository",
+      "DOI",
+      "FAIR"
+    ],
     "notes": "Commonly used for supplementary data linked to publications.",
-    "limitations": "Curated discovery is limited; verify each record individually."
+    "limitations": "Curated discovery is limited; verify each record individually.",
+    "see_also": [
+      {
+        "id": "osf",
+        "name": "Open Science Framework (OSF)",
+        "description": "Collaborative platform for projects, files, and preregistrations."
+      },
+      {
+        "id": "figshare",
+        "name": "Figshare",
+        "description": "Multidisciplinary repository for research outputs and datasets."
+      },
+      {
+        "id": "dryad",
+        "name": "Dryad",
+        "description": "Publication-linked repository for life sciences data."
+      }
+    ]
   },
   {
     "id": "dryad",
     "name": "Dryad",
     "short_description": "Curated repository for data underlying published research articles in the life and medical sciences.",
-    "topics": ["open science", "reproducibility", "life sciences"],
-    "domains": ["life sciences", "ecology", "evolution"],
-    "modalities": ["tabular", "images", "sequences"],
+    "topics": [
+      "open science",
+      "reproducibility",
+      "life sciences"
+    ],
+    "domains": [
+      "life sciences",
+      "ecology",
+      "evolution"
+    ],
+    "modalities": [
+      "tabular",
+      "images",
+      "sequences"
+    ],
     "country_or_region": "International",
     "population": "Varies by study",
     "human_participants": false,
@@ -151,22 +327,55 @@
     "longitudinal": false,
     "access_type": "open_access",
     "license": "CC0 (default for submissions)",
-    "data_format": ["CSV", "FASTA", "TIFF", "ZIP"],
+    "data_format": [
+      "CSV",
+      "FASTA",
+      "TIFF",
+      "ZIP"
+    ],
     "repository": "Dryad",
     "url": "https://datadryad.org/",
     "citation": "Dryad. https://datadryad.org/ Accessed 2026-03-01.",
     "last_verified": "2026-03-01",
-    "tags": ["repository", "publication-linked"],
+    "tags": [
+      "repository",
+      "publication-linked"
+    ],
     "notes": "Datasets are typically tied to peer-reviewed publications.",
-    "limitations": "Coverage skews toward life sciences; not a clinical cohort registry."
+    "limitations": "Coverage skews toward life sciences; not a clinical cohort registry.",
+    "see_also": [
+      {
+        "id": "zenodo",
+        "name": "Zenodo",
+        "description": "General open repository for supplementary research data."
+      },
+      {
+        "id": "figshare",
+        "name": "Figshare",
+        "description": "Repository for sharing figures, datasets, and other outputs."
+      }
+    ]
   },
   {
     "id": "icpsr",
     "name": "ICPSR",
     "short_description": "Inter-university Consortium archive of social and behavioral science research data.",
-    "topics": ["social science", "survey research", "mental health", "depression", "public opinion"],
-    "domains": ["social science", "behavioral science"],
-    "modalities": ["survey", "tabular", "interview"],
+    "topics": [
+      "social science",
+      "survey research",
+      "mental health",
+      "depression",
+      "public opinion"
+    ],
+    "domains": [
+      "social science",
+      "behavioral science"
+    ],
+    "modalities": [
+      "survey",
+      "tabular",
+      "interview"
+    ],
     "country_or_region": "United States / International",
     "population": "Varies by study; often survey respondents",
     "human_participants": true,
@@ -174,12 +383,21 @@
     "longitudinal": false,
     "access_type": "restricted",
     "license": "ICPSR Terms of Use / study-specific",
-    "data_format": ["SPSS", "Stata", "SAS", "CSV"],
+    "data_format": [
+      "SPSS",
+      "Stata",
+      "SAS",
+      "CSV"
+    ],
     "repository": "ICPSR",
     "url": "https://www.icpsr.umich.edu/",
     "citation": "Inter-university Consortium for Political and Social Research (ICPSR). https://www.icpsr.umich.edu/ Accessed 2026-03-01.",
     "last_verified": "2026-03-01",
-    "tags": ["survey", "depression", "social science"],
+    "tags": [
+      "survey",
+      "depression",
+      "social science"
+    ],
     "notes": "Institutional membership or data-use agreements often required.",
     "limitations": "Many studies are restricted; access policies vary by study."
   },
@@ -187,9 +405,20 @@
     "id": "kaggle-datasets",
     "name": "Kaggle Datasets",
     "short_description": "Community platform hosting datasets for machine learning competitions and public download.",
-    "topics": ["machine learning", "data science", "benchmarks"],
-    "domains": ["multidisciplinary"],
-    "modalities": ["tabular", "images", "text", "audio"],
+    "topics": [
+      "machine learning",
+      "data science",
+      "benchmarks"
+    ],
+    "domains": [
+      "multidisciplinary"
+    ],
+    "modalities": [
+      "tabular",
+      "images",
+      "text",
+      "audio"
+    ],
     "country_or_region": "International",
     "population": "Varies widely by dataset",
     "human_participants": false,
@@ -197,12 +426,21 @@
     "longitudinal": false,
     "access_type": "open_access",
     "license": "Varies by dataset",
-    "data_format": ["CSV", "JSON", "images", "ZIP"],
+    "data_format": [
+      "CSV",
+      "JSON",
+      "images",
+      "ZIP"
+    ],
     "repository": "Kaggle",
     "url": "https://www.kaggle.com/datasets",
     "citation": "Kaggle Inc. Kaggle Datasets. https://www.kaggle.com/datasets Accessed 2026-03-01.",
     "last_verified": "2026-03-01",
-    "tags": ["ML", "competitions", "community"],
+    "tags": [
+      "ML",
+      "competitions",
+      "community"
+    ],
     "notes": "Free account required to download. Licensing varies and is not always research-grade.",
     "limitations": "Variable documentation quality; not a curated research registry."
   },
@@ -210,9 +448,22 @@
     "id": "huggingface-datasets",
     "name": "Hugging Face Datasets",
     "short_description": "Hub for sharing and loading ML datasets with standardized APIs and community documentation.",
-    "topics": ["machine learning", "NLP", "computer vision", "benchmarks"],
-    "domains": ["multidisciplinary", "AI/ML"],
-    "modalities": ["text", "images", "audio", "tabular"],
+    "topics": [
+      "machine learning",
+      "NLP",
+      "computer vision",
+      "benchmarks"
+    ],
+    "domains": [
+      "multidisciplinary",
+      "AI/ML"
+    ],
+    "modalities": [
+      "text",
+      "images",
+      "audio",
+      "tabular"
+    ],
     "country_or_region": "International",
     "population": "Varies by dataset",
     "human_participants": false,
@@ -220,12 +471,21 @@
     "longitudinal": false,
     "access_type": "open_access",
     "license": "Varies by dataset",
-    "data_format": ["Parquet", "JSON", "Arrow", "CSV"],
+    "data_format": [
+      "Parquet",
+      "JSON",
+      "Arrow",
+      "CSV"
+    ],
     "repository": "Hugging Face",
     "url": "https://huggingface.co/datasets",
     "citation": "Hugging Face. Datasets. https://huggingface.co/datasets Accessed 2026-03-01.",
     "last_verified": "2026-03-01",
-    "tags": ["NLP", "transformers", "hub"],
+    "tags": [
+      "NLP",
+      "transformers",
+      "hub"
+    ],
     "notes": "Free account may be needed for gated datasets.",
     "limitations": "Primarily ML-oriented; clinical provenance varies."
   },
@@ -233,9 +493,22 @@
     "id": "world-bank-open-data",
     "name": "World Bank Open Data",
     "short_description": "Free global development indicators covering economics, health, education, and environment.",
-    "topics": ["development", "economics", "global health", "education"],
-    "domains": ["economics", "public policy", "global health"],
-    "modalities": ["tabular", "indicators", "time series"],
+    "topics": [
+      "development",
+      "economics",
+      "global health",
+      "education"
+    ],
+    "domains": [
+      "economics",
+      "public policy",
+      "global health"
+    ],
+    "modalities": [
+      "tabular",
+      "indicators",
+      "time series"
+    ],
     "country_or_region": "Global",
     "population": "Country- and region-level aggregates",
     "human_participants": false,
@@ -243,12 +516,21 @@
     "longitudinal": true,
     "access_type": "open_access",
     "license": "CC BY 4.0",
-    "data_format": ["CSV", "JSON", "XML", "API"],
+    "data_format": [
+      "CSV",
+      "JSON",
+      "XML",
+      "API"
+    ],
     "repository": "World Bank",
     "url": "https://data.worldbank.org/",
     "citation": "World Bank. World Development Indicators. https://data.worldbank.org/ Accessed 2026-03-01.",
     "last_verified": "2026-03-01",
-    "tags": ["indicators", "macroeconomics", "API"],
+    "tags": [
+      "indicators",
+      "macroeconomics",
+      "API"
+    ],
     "notes": "API and bulk download available without registration.",
     "limitations": "Aggregate country-level data; not individual-level health records."
   },
@@ -256,9 +538,23 @@
     "id": "our-world-in-data",
     "name": "Our World in Data",
     "short_description": "Open research and data portal visualizing global trends in health, poverty, and sustainability.",
-    "topics": ["global health", "poverty", "climate", "education", "mental health"],
-    "domains": ["public policy", "global health", "economics"],
-    "modalities": ["tabular", "indicators", "time series"],
+    "topics": [
+      "global health",
+      "poverty",
+      "climate",
+      "education",
+      "mental health"
+    ],
+    "domains": [
+      "public policy",
+      "global health",
+      "economics"
+    ],
+    "modalities": [
+      "tabular",
+      "indicators",
+      "time series"
+    ],
     "country_or_region": "Global",
     "population": "Country- and region-level aggregates",
     "human_participants": false,
@@ -266,13 +562,503 @@
     "longitudinal": true,
     "access_type": "open_access",
     "license": "CC BY 4.0",
-    "data_format": ["CSV", "JSON"],
+    "data_format": [
+      "CSV",
+      "JSON"
+    ],
     "repository": "Our World in Data",
     "url": "https://ourworldindata.org/",
     "citation": "Roser M, Ritchie H. Our World in Data. https://ourworldindata.org/ Accessed 2026-03-01.",
     "last_verified": "2026-03-01",
-    "tags": ["visualization", "open data", "global trends"],
+    "tags": [
+      "visualization",
+      "open data",
+      "global trends"
+    ],
     "notes": "Charts link to underlying CSV sources and original data providers.",
     "limitations": "Aggregated indicators; not a substitute for primary study data."
+  },
+  {
+    "id": "osf",
+    "name": "Open Science Framework (OSF)",
+    "short_description": "Free open platform for managing research projects, sharing files, preregistrations, and preprints across disciplines.",
+    "topics": [
+      "open science",
+      "data sharing",
+      "reproducibility",
+      "preregistration",
+      "preprints"
+    ],
+    "domains": [
+      "multidisciplinary"
+    ],
+    "modalities": [
+      "tabular",
+      "text",
+      "images",
+      "code",
+      "preprints"
+    ],
+    "country_or_region": "International",
+    "population": "Varies by project",
+    "human_participants": false,
+    "sample_size": null,
+    "longitudinal": false,
+    "access_type": "open_access",
+    "license": "Varies by project (CC-BY, CC0, custom, or none)",
+    "data_format": [
+      "CSV",
+      "PDF",
+      "ZIP",
+      "JSON",
+      "images"
+    ],
+    "repository": "Center for Open Science",
+    "url": "https://osf.io/",
+    "citation": "Center for Open Science. Open Science Framework. https://osf.io/ Accessed 2026-07-05.",
+    "last_verified": "2026-07-05",
+    "tags": [
+      "repository",
+      "OSF",
+      "preregistration",
+      "preprints",
+      "open science"
+    ],
+    "notes": "Hosts projects, files, registrations, and preprints. Some projects may be embargoed or view-only. Use OSF Search to discover public projects. OSF Search indexes roughly 19,773,773 public resources (projects, registrations, preprints, and files).",
+    "limitations": "Not all projects are public; access and licenses vary by contributor. This catalog lists the platform, not individual OSF projects.",
+    "see_also": [
+      {
+        "id": "zenodo",
+        "name": "Zenodo",
+        "description": "CERN-operated open repository often linked from OSF projects."
+      },
+      {
+        "id": "harvard-dataverse",
+        "name": "Harvard Dataverse",
+        "description": "General-purpose data repository for deposit and discovery."
+      },
+      {
+        "id": "dryad",
+        "name": "Dryad",
+        "description": "Publication-linked life sciences data repository."
+      },
+      {
+        "url": "https://osf.io/registries/",
+        "name": "OSF Registries",
+        "description": "Browse preregistered studies and registration templates."
+      },
+      {
+        "url": "https://osf.io/preprints/",
+        "name": "OSF Preprints",
+        "description": "Aggregated preprint servers hosted on OSF."
+      }
+    ]
+  },
+  {
+    "id": "figshare",
+    "name": "Figshare",
+    "short_description": "Multidisciplinary repository for sharing research outputs including datasets, figures, and supplementary files.",
+    "topics": [
+      "open science",
+      "data sharing",
+      "reproducibility"
+    ],
+    "domains": [
+      "multidisciplinary"
+    ],
+    "modalities": [
+      "tabular",
+      "images",
+      "text",
+      "video"
+    ],
+    "country_or_region": "International",
+    "population": "Varies by deposited item",
+    "human_participants": false,
+    "sample_size": null,
+    "longitudinal": false,
+    "access_type": "open_access",
+    "license": "Varies (CC0, CC-BY, CC-BY-NC, custom)",
+    "data_format": [
+      "CSV",
+      "PDF",
+      "ZIP",
+      "images",
+      "video"
+    ],
+    "repository": "Figshare (Digital Science)",
+    "url": "https://figshare.com/",
+    "citation": "Figshare. https://figshare.com/ Accessed 2026-07-05.",
+    "last_verified": "2026-07-05",
+    "tags": [
+      "repository",
+      "DOI",
+      "supplementary data"
+    ],
+    "notes": "Free accounts can upload and share research outputs with DOIs. Institutional Figshare portals also exist.",
+    "limitations": "Metadata quality and licensing vary by depositor; verify each item individually.",
+    "see_also": [
+      {
+        "id": "zenodo",
+        "name": "Zenodo",
+        "description": "CERN open repository for research outputs."
+      },
+      {
+        "id": "osf",
+        "name": "Open Science Framework (OSF)",
+        "description": "Project-based open science platform."
+      },
+      {
+        "id": "mendeley-data",
+        "name": "Mendeley Data",
+        "description": "Elsevier repository for research datasets."
+      }
+    ]
+  },
+  {
+    "id": "ncbi-geo",
+    "name": "NCBI GEO",
+    "short_description": "Public functional genomics data repository hosting microarray, RNA-seq, and other high-throughput experiments.",
+    "topics": [
+      "genomics",
+      "transcriptomics",
+      "gene expression",
+      "bioinformatics"
+    ],
+    "domains": [
+      "life sciences",
+      "genomics"
+    ],
+    "modalities": [
+      "genomics",
+      "tabular",
+      "sequences"
+    ],
+    "country_or_region": "International",
+    "population": "Varies by study; often cell lines, tissues, or clinical samples",
+    "human_participants": true,
+    "sample_size": null,
+    "longitudinal": false,
+    "access_type": "open_access",
+    "license": "Public domain / study-specific (see series record)",
+    "data_format": [
+      "SOFT",
+      "MINiML",
+      "FASTQ",
+      "CEL"
+    ],
+    "repository": "NCBI (NIH)",
+    "url": "https://www.ncbi.nlm.nih.gov/geo/",
+    "citation": "Barrett T, et al. NCBI GEO: archive for functional genomics data sets—update. Nucleic Acids Res. 2013;41(D1):D991-D995.",
+    "last_verified": "2026-07-05",
+    "tags": [
+      "GEO",
+      "RNA-seq",
+      "microarray",
+      "NIH",
+      "genomics"
+    ],
+    "notes": "Series (GSE), samples (GSM), and platforms (GPL) are indexed. Raw and processed data availability varies by submission.",
+    "limitations": "Individual series vary in sample size and human-subject protections; check each record's access notes.",
+    "see_also": [
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/sra",
+        "name": "NCBI SRA",
+        "description": "Sequence Read Archive for raw sequencing data."
+      },
+      {
+        "url": "https://www.ebi.ac.uk/arrayexpress/",
+        "name": "ArrayExpress",
+        "description": "EBI functional genomics archive (European counterpart)."
+      }
+    ]
+  },
+  {
+    "id": "clinicaltrials-gov",
+    "name": "ClinicalTrials.gov",
+    "short_description": "US registry of clinical studies with structured protocol and results data for thousands of trials worldwide.",
+    "topics": [
+      "clinical trials",
+      "transparency",
+      "drug development",
+      "mental health"
+    ],
+    "domains": [
+      "clinical research",
+      "biomedical"
+    ],
+    "modalities": [
+      "tabular",
+      "structured metadata",
+      "results data"
+    ],
+    "country_or_region": "International",
+    "population": "Clinical trial participants (study-dependent)",
+    "human_participants": true,
+    "sample_size": null,
+    "longitudinal": true,
+    "access_type": "open_access",
+    "license": "Public domain (US government)",
+    "data_format": [
+      "XML",
+      "JSON",
+      "CSV"
+    ],
+    "repository": "NIH / NLM",
+    "url": "https://clinicaltrials.gov/",
+    "citation": "ClinicalTrials.gov. National Library of Medicine. https://clinicaltrials.gov/ Accessed 2026-07-05.",
+    "last_verified": "2026-07-05",
+    "tags": [
+      "trials",
+      "registry",
+      "NIH",
+      "results reporting"
+    ],
+    "notes": "API and bulk downloads available. Results datasets posted for trials with reporting requirements.",
+    "limitations": "Registry metadata, not individual patient-level data. Results availability depends on trial reporting.",
+    "see_also": [
+      {
+        "url": "https://www.who.int/clinical-trials-registry-platform",
+        "name": "WHO ICTRP",
+        "description": "World Health Organization international clinical trials portal."
+      },
+      {
+        "id": "osf",
+        "name": "Open Science Framework (OSF)",
+        "description": "Platform for preregistering study protocols and sharing materials."
+      }
+    ]
+  },
+  {
+    "id": "oecd-data",
+    "name": "OECD Data",
+    "short_description": "Open statistical portal for OECD member and partner countries covering economics, health, education, and labor.",
+    "topics": [
+      "economics",
+      "education",
+      "health policy",
+      "labor",
+      "development"
+    ],
+    "domains": [
+      "economics",
+      "public policy"
+    ],
+    "modalities": [
+      "tabular",
+      "indicators",
+      "time series"
+    ],
+    "country_or_region": "OECD member and partner countries",
+    "population": "Country- and region-level aggregates",
+    "human_participants": false,
+    "sample_size": null,
+    "longitudinal": true,
+    "access_type": "open_access",
+    "license": "OECD Terms and Conditions (attribution required)",
+    "data_format": [
+      "CSV",
+      "SDMX",
+      "API"
+    ],
+    "repository": "OECD",
+    "url": "https://data.oecd.org/",
+    "citation": "Organisation for Economic Co-operation and Development (OECD). OECD Data. https://data.oecd.org/ Accessed 2026-07-05.",
+    "last_verified": "2026-07-05",
+    "tags": [
+      "indicators",
+      "macroeconomics",
+      "SDMX",
+      "API"
+    ],
+    "notes": "SDMX API and bulk export available. Covers health expenditure, education, employment, and more.",
+    "limitations": "Aggregate country-level indicators; not microdata or individual health records.",
+    "see_also": [
+      {
+        "id": "world-bank-open-data",
+        "name": "World Bank Open Data",
+        "description": "Global development indicators."
+      },
+      {
+        "id": "our-world-in-data",
+        "name": "Our World in Data",
+        "description": "Open research portal with global trend visualizations."
+      }
+    ]
+  },
+  {
+    "id": "data-gov",
+    "name": "Data.gov",
+    "short_description": "US government open data catalog spanning health, climate, transportation, education, and public safety datasets.",
+    "topics": [
+      "open government",
+      "public policy",
+      "climate",
+      "health",
+      "transportation"
+    ],
+    "domains": [
+      "public policy",
+      "multidisciplinary"
+    ],
+    "modalities": [
+      "tabular",
+      "geospatial",
+      "API",
+      "documents"
+    ],
+    "country_or_region": "United States",
+    "population": "Varies by dataset; often aggregates or administrative records",
+    "human_participants": false,
+    "sample_size": null,
+    "longitudinal": false,
+    "access_type": "open_access",
+    "license": "Varies (often public domain or CC BY for federal data)",
+    "data_format": [
+      "CSV",
+      "JSON",
+      "XML",
+      "GeoJSON",
+      "API"
+    ],
+    "repository": "US General Services Administration",
+    "url": "https://data.gov/",
+    "citation": "Data.gov. U.S. General Services Administration. https://data.gov/ Accessed 2026-07-05.",
+    "last_verified": "2026-07-05",
+    "tags": [
+      "government",
+      "open data",
+      "catalog",
+      "API"
+    ],
+    "notes": "Metadata catalog linking to datasets hosted by federal agencies. License and format vary by source agency.",
+    "limitations": "A discovery portal; each dataset's access terms and quality depend on the originating agency.",
+    "see_also": [
+      {
+        "url": "https://catalog.data.gov/dataset?tags=health",
+        "name": "Data.gov Health Datasets",
+        "description": "Health-tagged datasets in the US open data catalog."
+      },
+      {
+        "id": "world-bank-open-data",
+        "name": "World Bank Open Data",
+        "description": "Global development indicators."
+      }
+    ]
+  },
+  {
+    "id": "mendeley-data",
+    "name": "Mendeley Data",
+    "short_description": "Open research data repository for sharing and discovering datasets with DOIs, hosted by Elsevier.",
+    "topics": [
+      "open science",
+      "data sharing",
+      "reproducibility"
+    ],
+    "domains": [
+      "multidisciplinary"
+    ],
+    "modalities": [
+      "tabular",
+      "images",
+      "text",
+      "sequences"
+    ],
+    "country_or_region": "International",
+    "population": "Varies by deposited dataset",
+    "human_participants": false,
+    "sample_size": null,
+    "longitudinal": false,
+    "access_type": "open_access",
+    "license": "Varies (CC0, CC-BY, custom)",
+    "data_format": [
+      "CSV",
+      "ZIP",
+      "PDF",
+      "images"
+    ],
+    "repository": "Elsevier (Mendeley Data)",
+    "url": "https://data.mendeley.com/",
+    "citation": "Mendeley Data. Elsevier. https://data.mendeley.com/ Accessed 2026-07-05.",
+    "last_verified": "2026-07-05",
+    "tags": [
+      "repository",
+      "DOI",
+      "Elsevier"
+    ],
+    "notes": "Free to browse and download open datasets. Researchers can deposit data linked to publications.",
+    "limitations": "Coverage and metadata quality vary; some datasets may be restricted.",
+    "see_also": [
+      {
+        "id": "figshare",
+        "name": "Figshare",
+        "description": "Multidisciplinary research output repository."
+      },
+      {
+        "id": "zenodo",
+        "name": "Zenodo",
+        "description": "CERN open repository for research outputs."
+      }
+    ]
+  },
+  {
+    "id": "openaire",
+    "name": "OpenAIRE Explore",
+    "short_description": "European open science discovery portal indexing publications, datasets, software, and other research products.",
+    "topics": [
+      "open science",
+      "data sharing",
+      "European research",
+      "FAIR"
+    ],
+    "domains": [
+      "multidisciplinary"
+    ],
+    "modalities": [
+      "tabular",
+      "text",
+      "software",
+      "metadata"
+    ],
+    "country_or_region": "European Union / International",
+    "population": "Varies by indexed resource",
+    "human_participants": false,
+    "sample_size": null,
+    "longitudinal": false,
+    "access_type": "open_access",
+    "license": "Varies by indexed source",
+    "data_format": [
+      "metadata records",
+      "links to source repositories"
+    ],
+    "repository": "OpenAIRE",
+    "url": "https://explore.openaire.eu/",
+    "citation": "OpenAIRE. Explore. https://explore.openaire.eu/ Accessed 2026-07-05.",
+    "last_verified": "2026-07-05",
+    "tags": [
+      "discovery",
+      "EU",
+      "FAIR",
+      "repository aggregator"
+    ],
+    "notes": "Aggregates metadata from repositories, journals, and institutions. Links out to original data sources.",
+    "limitations": "A discovery layer, not a single repository; access terms depend on the underlying source.",
+    "see_also": [
+      {
+        "url": "https://data.europa.eu/",
+        "name": "EU Open Data Portal",
+        "description": "European Union public-sector open data."
+      },
+      {
+        "id": "zenodo",
+        "name": "Zenodo",
+        "description": "Major European open repository indexed by OpenAIRE."
+      },
+      {
+        "id": "osf",
+        "name": "Open Science Framework (OSF)",
+        "description": "Open science project platform."
+      }
+    ]
   }
 ]

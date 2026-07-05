@@ -39,6 +39,20 @@ Each object in the array must include these fields:
 | `tags` | string[] | Additional search keywords |
 | `notes` | string | Helpful context for researchers |
 | `limitations` | string | Caveats, access constraints, coverage gaps |
+| `see_also` | object[] (optional) | Related open-access resources — see below |
+
+### Optional: `see_also` links
+
+Each `see_also` object can link to another catalog entry or an external resource:
+
+| Field | Type | Description |
+|---|---|---|
+| `id` | string (optional) | Catalog `id` for in-app links (e.g. `zenodo`) |
+| `name` | string | Display name |
+| `url` | string (optional) | External https URL (use when `id` is omitted) |
+| `description` | string (optional) | Short context shown on detail pages |
+
+Either `id` or `url` should be provided. Use `id` for entries in this catalog; use `url` for external registries and tools.
 
 ### Example entry
 
@@ -137,3 +151,15 @@ Before submitting:
 - [ ] `last_verified` is updated
 - [ ] `npm run verify` passes
 - [ ] `npm run build` succeeds
+
+## OSF integration
+
+The catalog includes an [Open Science Framework (OSF)](https://osf.io/) platform entry (`id: osf`). To refresh OSF metadata from the official API at build or maintenance time:
+
+```bash
+npm run sync:osf
+```
+
+This script fetches the current public resource count from the OSF API v2 and updates the OSF entry's `notes` and `last_verified` fields in `datasets.json`. It does not ingest individual OSF projects — add the platform, not per-study uploads (see [CONTRIBUTING.md](./CONTRIBUTING.md)).
+
+External open-access discovery tools are listed in `src/data/open-access-resources.json` and shown on the About page.
