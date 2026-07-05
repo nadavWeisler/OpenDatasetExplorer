@@ -1,5 +1,14 @@
 export type AccessType = 'open_access' | 'restricted' | 'application_required';
 
+export interface SeeAlsoLink {
+  /** Catalog id when linking to another entry in this app */
+  id?: string;
+  name: string;
+  /** External URL; omit when `id` points to a catalog entry */
+  url?: string;
+  description?: string;
+}
+
 export interface Dataset {
   id: string;
   name: string;
@@ -22,6 +31,8 @@ export interface Dataset {
   tags: string[];
   notes: string;
   limitations: string;
+  /** Related open-access resources in this catalog or elsewhere */
+  see_also?: SeeAlsoLink[];
 }
 
 export interface FilterState {

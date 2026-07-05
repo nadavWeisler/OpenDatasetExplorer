@@ -4,6 +4,7 @@ import datasetsJson from '../data/datasets.json';
 import type { Dataset } from '../types/dataset';
 import { formatAccessType, formatDate, formatSampleSize } from '../lib/filters';
 import { AccessBadge } from '../components/SearchBar';
+import SeeAlsoSection from '../components/SeeAlsoSection';
 
 const datasets = datasetsJson as Dataset[];
 
@@ -65,6 +66,16 @@ export default function DatasetDetailPage() {
         <a href={dataset.url} className="primary-button" target="_blank" rel="noopener noreferrer">
           Open dataset source
         </a>
+        {dataset.id === 'osf' && (
+          <a
+            href="https://osf.io/search/"
+            className="secondary-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Search OSF projects
+          </a>
+        )}
         <button type="button" className="secondary-button" onClick={copyCitation}>
           {copied ? 'Citation copied' : 'Copy citation'}
         </button>
@@ -136,6 +147,10 @@ export default function DatasetDetailPage() {
           <h2>Citation</h2>
           <blockquote className="citation-block">{dataset.citation}</blockquote>
         </section>
+
+        {dataset.see_also && dataset.see_also.length > 0 && (
+          <SeeAlsoSection links={dataset.see_also} />
+        )}
       </div>
     </div>
   );

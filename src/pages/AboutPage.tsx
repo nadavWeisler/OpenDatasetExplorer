@@ -1,3 +1,9 @@
+import openAccessResourcesJson from '../data/open-access-resources.json';
+import type { SeeAlsoLink } from '../types/dataset';
+import SeeAlsoSection from '../components/SeeAlsoSection';
+
+const openAccessResources = openAccessResourcesJson as SeeAlsoLink[];
+
 export default function AboutPage() {
   return (
     <div className="container about-page">
@@ -37,10 +43,23 @@ export default function AboutPage() {
           requirements, licenses, and study details at the original source before use.
         </p>
         <p>
+          The catalog includes open science platforms such as the{' '}
+          <a href="https://osf.io/" target="_blank" rel="noopener noreferrer">
+            Open Science Framework (OSF)
+          </a>
+          , Zenodo, Figshare, and government open data portals. Dataset detail pages include a{' '}
+          <strong>See also</strong> section with related open-access resources.
+        </p>
+        <p>
           See <code>DATA_SOURCES.md</code> in the repository for how to add or update datasets,
           and <code>CONTRIBUTING.md</code> for contribution guidelines.
         </p>
       </section>
+
+      <SeeAlsoSection
+        links={openAccessResources}
+        title="See also — open access research discovery"
+      />
 
       <section className="about-section">
         <h2>Privacy</h2>

@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "verify": "node scripts/verify.mjs"
+    "verify": "node scripts/verify.mjs",
+    "sync:osf": "node scripts/sync-osf.mjs"
   },
   "dependencies": {
     "fuse.js": "^7.4.2",
