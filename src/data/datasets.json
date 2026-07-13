@@ -1060,5 +1060,694 @@
         "description": "Open science project platform."
       }
     ]
+  },
+  {
+    "id": "nhanes",
+    "name": "NHANES (National Health and Nutrition Examination Survey)",
+    "short_description": "US nationally representative health survey with interviews, physical exams, and laboratory data from CDC.",
+    "topics": [
+      "epidemiology",
+      "nutrition",
+      "mental health",
+      "depression",
+      "public health"
+    ],
+    "domains": [
+      "biomedical",
+      "population health"
+    ],
+    "modalities": [
+      "questionnaire",
+      "laboratory",
+      "physical exam",
+      "EHR"
+    ],
+    "country_or_region": "United States",
+    "population": "US civilian non-institutionalized population",
+    "human_participants": true,
+    "sample_size": 15000,
+    "longitudinal": false,
+    "access_type": "open_access",
+    "license": "Public domain (US government work)",
+    "data_format": [
+      "XPT",
+      "CSV",
+      "PDF documentation"
+    ],
+    "repository": "CDC / NCHS",
+    "url": "https://www.cdc.gov/nchs/nhanes/",
+    "citation": "Centers for Disease Control and Prevention (CDC). National Center for Health Statistics (NCHS). National Health and Nutrition Examination Survey. https://www.cdc.gov/nchs/nhanes/",
+    "last_verified": "2026-07-13",
+    "tags": [
+      "CDC",
+      "survey",
+      "cohort",
+      "depression",
+      "nutrition"
+    ],
+    "notes": "Public-use files released in multi-year cycles. Restricted-use versions require a research proposal.",
+    "limitations": "Cross-sectional design per cycle; restricted variables require separate approval.",
+    "see_also": [
+      {
+        "id": "all-of-us",
+        "name": "All of Us Research Program",
+        "description": "Larger US precision-medicine cohort with genomic and EHR data."
+      },
+      {
+        "id": "world-bank-open-data",
+        "name": "World Bank Open Data",
+        "description": "Global development and health indicators."
+      }
+    ]
+  },
+  {
+    "id": "adni",
+    "name": "Alzheimer's Disease Neuroimaging Initiative (ADNI)",
+    "short_description": "Longitudinal multimodal study of Alzheimer's disease with MRI, PET, CSF, and cognitive assessments.",
+    "topics": [
+      "neuroimaging",
+      "Alzheimer's disease",
+      "cognitive neuroscience",
+      "aging"
+    ],
+    "domains": [
+      "neuroscience",
+      "clinical research"
+    ],
+    "modalities": [
+      "MRI",
+      "PET",
+      "CSF",
+      "questionnaire",
+      "genomics"
+    ],
+    "country_or_region": "United States / Canada / Australia",
+    "population": "Older adults across the cognitive spectrum (CN, MCI, AD)",
+    "human_participants": true,
+    "sample_size": 1600,
+    "longitudinal": true,
+    "access_type": "application_required",
+    "license": "ADNI Data Use Agreement",
+    "data_format": [
+      "DICOM",
+      "NIfTI",
+      "CSV",
+      "BIDS"
+    ],
+    "repository": "ADNI / LONI",
+    "url": "https://adni.loni.usc.edu/",
+    "citation": "Mueller SG, et al. Ways toward an early diagnosis in Alzheimer's disease: the Alzheimer's Disease Neuroimaging Initiative (ADNI). Alzheimers Dement. 2005;1(1):55-66.",
+    "last_verified": "2026-07-13",
+    "tags": [
+      "MRI",
+      "longitudinal",
+      "Alzheimer's",
+      "imaging"
+    ],
+    "notes": "Researchers register and accept the DUA. Imaging and biomarker data are harmonized across phases (ADNI-1 through ADNI-4).",
+    "limitations": "Application required; primarily North American sites; not a general-purpose repository.",
+    "see_also": [
+      {
+        "id": "openneuro",
+        "name": "OpenNeuro",
+        "description": "Open neuroimaging repository for shared MRI/fMRI datasets."
+      },
+      {
+        "id": "synapse",
+        "name": "Synapse",
+        "description": "Collaborative platform hosting ADNI-adjacent and related biomedical data."
+      }
+    ]
+  },
+  {
+    "id": "dbgap",
+    "name": "dbGaP (Database of Genotypes and Phenotypes)",
+    "short_description": "NIH archive of studies examining genotype-phenotype relationships, including controlled-access genomic data.",
+    "topics": [
+      "genomics",
+      "genetics",
+      "epidemiology",
+      "precision medicine"
+    ],
+    "domains": [
+      "biomedical",
+      "genomics"
+    ],
+    "modalities": [
+      "genomics",
+      "phenotype",
+      "EHR"
+    ],
+    "country_or_region": "United States / International",
+    "population": "Varies by study; human research participants",
+    "human_participants": true,
+    "sample_size": null,
+    "longitudinal": false,
+    "access_type": "application_required",
+    "license": "Study-specific data use limitations",
+    "data_format": [
+      "VCF",
+      "PLINK",
+      "phenotype tables",
+      "documentation"
+    ],
+    "repository": "NCBI dbGaP",
+    "url": "https://www.ncbi.nlm.nih.gov/gap/",
+    "citation": "Mailman MD, et al. The NCBI dbGaP database of genotypes and phenotypes. Nat Genet. 2007;39(10):1181-1186.",
+    "last_verified": "2026-07-13",
+    "tags": [
+      "NIH",
+      "genomics",
+      "controlled access",
+      "GWAS"
+    ],
+    "notes": "Open-access summary data available; individual-level genomic data requires NIH approval and a Data Use Certification.",
+    "limitations": "Controlled-access data requires institutional sign-off; not all studies are open.",
+    "see_also": [
+      {
+        "id": "ncbi-geo",
+        "name": "NCBI GEO",
+        "description": "Gene expression and functional genomics repository."
+      },
+      {
+        "id": "all-of-us",
+        "name": "All of Us Research Program",
+        "description": "US cohort with genomic and health data."
+      }
+    ]
+  },
+  {
+    "id": "uk-data-service",
+    "name": "UK Data Service",
+    "short_description": "UK national data service providing access to social, economic, and population research datasets.",
+    "topics": [
+      "social science",
+      "economics",
+      "health inequalities",
+      "longitudinal studies"
+    ],
+    "domains": [
+      "social science",
+      "population health"
+    ],
+    "modalities": [
+      "survey",
+      "tabular",
+      "questionnaire",
+      "census"
+    ],
+    "country_or_region": "United Kingdom",
+    "population": "UK households and individuals across social science studies",
+    "human_participants": true,
+    "sample_size": null,
+    "longitudinal": true,
+    "access_type": "application_required",
+    "license": "Varies by dataset (End User Licence, Special Licence, Secure Access)",
+    "data_format": [
+      "SPSS",
+      "Stata",
+      "CSV",
+      "SAS"
+    ],
+    "repository": "UK Data Service",
+    "url": "https://ukdataservice.ac.uk/",
+    "citation": "UK Data Service. https://ukdataservice.ac.uk/ Accessed 2026-07-13.",
+    "last_verified": "2026-07-13",
+    "tags": [
+      "UK",
+      "social science",
+      "survey",
+      "longitudinal"
+    ],
+    "notes": "Hosts major UK cohorts and surveys. Registration required; some datasets need additional approval.",
+    "limitations": "Access tiers vary; not all data are open. Primarily UK-focused.",
+    "see_also": [
+      {
+        "id": "uk-biobank",
+        "name": "UK Biobank",
+        "description": "Large UK biomedical cohort with genetics and imaging."
+      },
+      {
+        "id": "icpsr",
+        "name": "ICPSR",
+        "description": "US social science archive with similar access models."
+      }
+    ]
+  },
+  {
+    "id": "gbif",
+    "name": "GBIF (Global Biodiversity Information Facility)",
+    "short_description": "International network and data infrastructure for sharing species occurrence and biodiversity records.",
+    "topics": [
+      "biodiversity",
+      "ecology",
+      "conservation",
+      "species distribution"
+    ],
+    "domains": [
+      "ecology",
+      "environmental science"
+    ],
+    "modalities": [
+      "occurrence records",
+      "taxonomy",
+      "geospatial"
+    ],
+    "country_or_region": "International",
+    "population": "Species observations (not human participants)",
+    "human_participants": false,
+    "sample_size": null,
+    "longitudinal": false,
+    "access_type": "open_access",
+    "license": "Varies by dataset (CC0, CC-BY, and others)",
+    "data_format": [
+      "Darwin Core",
+      "CSV",
+      "JSON API"
+    ],
+    "repository": "GBIF",
+    "url": "https://www.gbif.org/",
+    "citation": "GBIF.org. GBIF Home Page. https://www.gbif.org/ Accessed 2026-07-13.",
+    "last_verified": "2026-07-13",
+    "tags": [
+      "biodiversity",
+      "open data",
+      "ecology",
+      "species"
+    ],
+    "notes": "Aggregates publisher-contributed occurrence data. API and bulk downloads available.",
+    "limitations": "Data quality and coverage vary by region and taxon; not human-subject research data.",
+    "see_also": [
+      {
+        "id": "zenodo",
+        "name": "Zenodo",
+        "description": "General open repository for ecology datasets and software."
+      },
+      {
+        "id": "dryad",
+        "name": "Dryad",
+        "description": "Publication-linked repository often used for ecology data."
+      }
+    ]
+  },
+  {
+    "id": "finngen",
+    "name": "FinnGen",
+    "short_description": "Finnish nationwide biobank-cohort linking genomic data with national health registries.",
+    "topics": [
+      "genomics",
+      "epidemiology",
+      "biobank",
+      "population health"
+    ],
+    "domains": [
+      "biomedical",
+      "genomics"
+    ],
+    "modalities": [
+      "genomics",
+      "EHR",
+      "registry"
+    ],
+    "country_or_region": "Finland",
+    "population": "Finnish biobank participants linked to national registers",
+    "human_participants": true,
+    "sample_size": 500000,
+    "longitudinal": true,
+    "access_type": "application_required",
+    "license": "FinnGen Data Access Agreement",
+    "data_format": [
+      "VCF",
+      "phenotype tables",
+      "summary statistics"
+    ],
+    "repository": "FinnGen",
+    "url": "https://www.finngen.fi/en",
+    "citation": "FinnGen. https://www.finngen.fi/en Accessed 2026-07-13.",
+    "last_verified": "2026-07-13",
+    "tags": [
+      "biobank",
+      "GWAS",
+      "Nordic",
+      "registry"
+    ],
+    "notes": "Summary-level GWAS results are openly available; individual-level data requires approved collaboration.",
+    "limitations": "Finnish population; controlled access for individual-level data.",
+    "see_also": [
+      {
+        "id": "uk-biobank",
+        "name": "UK Biobank",
+        "description": "Comparable large-scale biobank cohort."
+      },
+      {
+        "id": "dbgap",
+        "name": "dbGaP",
+        "description": "NIH controlled-access genomics archive."
+      }
+    ]
+  },
+  {
+    "id": "hrs",
+    "name": "Health and Retirement Study (HRS)",
+    "short_description": "Longitudinal US survey of older adults covering health, retirement, economics, and cognition.",
+    "topics": [
+      "aging",
+      "mental health",
+      "depression",
+      "economics",
+      "longitudinal"
+    ],
+    "domains": [
+      "social science",
+      "population health"
+    ],
+    "modalities": [
+      "survey",
+      "questionnaire",
+      "biomarkers",
+      "genomics"
+    ],
+    "country_or_region": "United States",
+    "population": "US adults over age 50 and their spouses",
+    "human_participants": true,
+    "sample_size": 20000,
+    "longitudinal": true,
+    "access_type": "application_required",
+    "license": "HRS Public License / Restricted Data Agreement",
+    "data_format": [
+      "SAS",
+      "Stata",
+      "SPSS",
+      "CSV"
+    ],
+    "repository": "University of Michigan / HRS",
+    "url": "https://hrs.isr.umich.edu/",
+    "citation": "Sonnega A, et al. Cohort Profile: the Health and Retirement Study (HRS). Int J Epidemiol. 2014;43(2):576-585.",
+    "last_verified": "2026-07-13",
+    "tags": [
+      "aging",
+      "longitudinal",
+      "survey",
+      "depression"
+    ],
+    "notes": "Public-use files available after registration; sensitive geographic and linked administrative data require separate approval.",
+    "limitations": "US older-adult population; some files restricted.",
+    "see_also": [
+      {
+        "id": "icpsr",
+        "name": "ICPSR",
+        "description": "Archive distributing HRS public-use files."
+      },
+      {
+        "id": "nhanes",
+        "name": "NHANES",
+        "description": "US health examination survey across all adult ages."
+      }
+    ]
+  },
+  {
+    "id": "mimic-iv",
+    "name": "MIMIC-IV",
+    "short_description": "De-identified critical care database from Beth Israel Deaconess Medical Center with EHR and waveform data.",
+    "topics": [
+      "critical care",
+      "clinical informatics",
+      "EHR",
+      "intensive care"
+    ],
+    "domains": [
+      "clinical research",
+      "biomedical"
+    ],
+    "modalities": [
+      "EHR",
+      "waveforms",
+      "laboratory",
+      "medications"
+    ],
+    "country_or_region": "United States",
+    "population": "ICU patients at a Boston academic medical center",
+    "human_participants": true,
+    "sample_size": 364000,
+    "longitudinal": true,
+    "access_type": "application_required",
+    "license": "PhysioNet Credentialed Health Data License 1.5.0",
+    "data_format": [
+      "CSV",
+      "parquet",
+      "waveform files"
+    ],
+    "repository": "PhysioNet",
+    "url": "https://physionet.org/content/mimiciv/",
+    "citation": "Johnson AEW, et al. MIMIC-IV, a freely accessible electronic health record dataset. Sci Data. 2023;10(1):1.",
+    "last_verified": "2026-07-13",
+    "tags": [
+      "ICU",
+      "EHR",
+      "PhysioNet",
+      "critical care"
+    ],
+    "notes": "Requires PhysioNet credentialing and CITI training. Hosted on PhysioNet alongside other clinical waveform datasets.",
+    "limitations": "Single-center data; credentialed access required; not fully open.",
+    "see_also": [
+      {
+        "id": "physionet",
+        "name": "PhysioNet",
+        "description": "Parent platform for MIMIC and other clinical waveform datasets."
+      },
+      {
+        "id": "synapse",
+        "name": "Synapse",
+        "description": "Collaborative platform for biomedical data projects."
+      }
+    ]
+  },
+  {
+    "id": "synapse",
+    "name": "Synapse",
+    "short_description": "Collaborative research platform for sharing and analyzing biomedical datasets, projects, and workflows.",
+    "topics": [
+      "biomedical",
+      "data sharing",
+      "collaboration",
+      "reproducibility"
+    ],
+    "domains": [
+      "biomedical",
+      "multidisciplinary"
+    ],
+    "modalities": [
+      "tabular",
+      "genomics",
+      "imaging",
+      "code"
+    ],
+    "country_or_region": "International",
+    "population": "Varies by project",
+    "human_participants": false,
+    "sample_size": null,
+    "longitudinal": false,
+    "access_type": "open_access",
+    "license": "Varies by project",
+    "data_format": [
+      "CSV",
+      "BAM",
+      "images",
+      "JSON"
+    ],
+    "repository": "Sage Bionetworks / Synapse",
+    "url": "https://www.synapse.org/",
+    "citation": "Sage Bionetworks. Synapse. https://www.synapse.org/ Accessed 2026-07-13.",
+    "last_verified": "2026-07-13",
+    "tags": [
+      "collaboration",
+      "biomedical",
+      "platform",
+      "Sage"
+    ],
+    "notes": "Hosts challenge projects and team science datasets. Some projects require registration or approval.",
+    "limitations": "Access and licenses vary by project; platform rather than a single dataset.",
+    "see_also": [
+      {
+        "id": "osf",
+        "name": "Open Science Framework (OSF)",
+        "description": "Cross-disciplinary open science project platform."
+      },
+      {
+        "id": "adni",
+        "name": "ADNI",
+        "description": "Alzheimer's imaging initiative with related hosted projects."
+      }
+    ]
+  },
+  {
+    "id": "arrayexpress",
+    "name": "ArrayExpress",
+    "short_description": "EMBL-EBI repository of functional genomics experiments including microarray and RNA-seq studies.",
+    "topics": [
+      "genomics",
+      "gene expression",
+      "transcriptomics",
+      "functional genomics"
+    ],
+    "domains": [
+      "genomics",
+      "biomedical"
+    ],
+    "modalities": [
+      "RNA-seq",
+      "microarray",
+      "genomics"
+    ],
+    "country_or_region": "International",
+    "population": "Varies by experiment",
+    "human_participants": false,
+    "sample_size": null,
+    "longitudinal": false,
+    "access_type": "open_access",
+    "license": "Varies by study (often open access upon publication)",
+    "data_format": [
+      "FASTQ",
+      "CEL",
+      "MTX",
+      "processed matrices"
+    ],
+    "repository": "EMBL-EBI ArrayExpress",
+    "url": "https://www.ebi.ac.uk/biostudies/arrayexpress",
+    "citation": "Athar A, et al. ArrayExpress update — from bulk submissions to single-cell and spatial transcriptomics. Nucleic Acids Res. 2024.",
+    "last_verified": "2026-07-13",
+    "tags": [
+      "RNA-seq",
+      "EBI",
+      "expression",
+      "omics"
+    ],
+    "notes": "Part of BioStudies; integrates with ENA for raw sequencing reads.",
+    "limitations": "Experiment-level repository; access terms set by submitters.",
+    "see_also": [
+      {
+        "id": "ncbi-geo",
+        "name": "NCBI GEO",
+        "description": "NIH counterpart for gene expression and omics data."
+      },
+      {
+        "id": "zenodo",
+        "name": "Zenodo",
+        "description": "General repository for supplementary omics datasets."
+      }
+    ]
+  },
+  {
+    "id": "talkbank",
+    "name": "TalkBank",
+    "short_description": "Multilingual repository of spoken language corpora for linguistics, conversation analysis, and language development.",
+    "topics": [
+      "linguistics",
+      "language development",
+      "conversation analysis",
+      "speech"
+    ],
+    "domains": [
+      "linguistics",
+      "cognitive science"
+    ],
+    "modalities": [
+      "audio",
+      "transcripts",
+      "video"
+    ],
+    "country_or_region": "International",
+    "population": "Varies by corpus; includes child language and clinical language samples",
+    "human_participants": true,
+    "sample_size": null,
+    "longitudinal": true,
+    "access_type": "open_access",
+    "license": "Varies by corpus (often research-use)",
+    "data_format": [
+      "CHAT transcription",
+      "audio",
+      "video"
+    ],
+    "repository": "TalkBank / CMU",
+    "url": "https://talkbank.org/",
+    "citation": "MacWhinney B. The TalkBank Project: Goals and Achievements. 2007.",
+    "last_verified": "2026-07-13",
+    "tags": [
+      "linguistics",
+      "corpus",
+      "speech",
+      "CHILDES"
+    ],
+    "notes": "Includes CHILDES, AphasiaBank, and other specialized corpora. Some clinical corpora require registration.",
+    "limitations": "Corpus-specific restrictions; not all data are equally annotated.",
+    "see_also": [
+      {
+        "id": "harvard-dataverse",
+        "name": "Harvard Dataverse",
+        "description": "General repository for linguistics datasets and supplements."
+      },
+      {
+        "id": "osf",
+        "name": "Open Science Framework (OSF)",
+        "description": "Platform for sharing language research projects."
+      }
+    ]
+  },
+  {
+    "id": "nces",
+    "name": "NCES (National Center for Education Statistics)",
+    "short_description": "US federal source for education data including surveys, assessments, and institutional statistics.",
+    "topics": [
+      "education",
+      "survey",
+      "assessment",
+      "public policy"
+    ],
+    "domains": [
+      "education",
+      "social science"
+    ],
+    "modalities": [
+      "survey",
+      "tabular",
+      "assessment scores"
+    ],
+    "country_or_region": "United States",
+    "population": "US students, schools, and postsecondary institutions",
+    "human_participants": true,
+    "sample_size": null,
+    "longitudinal": true,
+    "access_type": "open_access",
+    "license": "Public domain (US government work)",
+    "data_format": [
+      "CSV",
+      "SAS",
+      "SPSS",
+      "Stata"
+    ],
+    "repository": "NCES / US Department of Education",
+    "url": "https://nces.ed.gov/",
+    "citation": "National Center for Education Statistics. https://nces.ed.gov/ Accessed 2026-07-13.",
+    "last_verified": "2026-07-13",
+    "tags": [
+      "education",
+      "US government",
+      "survey",
+      "NAEP"
+    ],
+    "notes": "Includes ECLS, TIMSS/US participation, IPEDS, and NAEP. Public-use microdata often available with documentation.",
+    "limitations": "US education system focus; some restricted-use files require license applications.",
+    "see_also": [
+      {
+        "id": "icpsr",
+        "name": "ICPSR",
+        "description": "Archive hosting many NCES public-use education datasets."
+      },
+      {
+        "id": "data-gov",
+        "name": "Data.gov",
+        "description": "US government open data portal including education datasets."
+      }
+    ]
   }
 ]

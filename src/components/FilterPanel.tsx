@@ -1,14 +1,16 @@
 import type { FilterState } from '../types/dataset';
-import { collectFilterOptions } from '../lib/filters';
+import { collectFilterOptions, type computeFacetCounts } from '../lib/filters';
 import datasets from '../data/datasets.json';
 import type { Dataset } from '../types/dataset';
 
 type FilterOptions = ReturnType<typeof collectFilterOptions>;
+type FacetCounts = ReturnType<typeof computeFacetCounts>;
 
 interface FilterPanelProps {
   filters: FilterState;
   onChange: (next: FilterState) => void;
   options?: FilterOptions;
+  facetCounts?: FacetCounts;
   collapsed?: boolean;
   onToggle?: () => void;
 }
@@ -24,27 +26,41 @@ function MultiSelect({
   label,
   values,
   selected,
+  counts,
   onToggle,
 }: {
   label: string;
   values: string[];
   selected: string[];
+  counts?: Map<string, number>;
   onToggle: (value: string) => void;
 }) {
   return (
     <fieldset className="filter-group">
       <legend>{label}</legend>
       <div className="checkbox-grid">
-        {values.map((value) => (
-          <label key={value} className="checkbox-label">
-            <input
-              type="checkbox"
-              checked={selected.includes(value)}
-              onChange={() => onToggle(value)}
-            />
-            <span>{value}</span>
-          </label>
-        ))}
+        {values.map((value) => {
+          const count = counts?.get(value);
+          const disabled = counts !== undefined && count === 0;
+          return (
+            <label key={value} className={`checkbox-label${disabled ? ' disabled' : ''}`}>
+              <input
+                type="checkbox"
+                checked={selected.includes(value)}
+                disabled={disabled}
+                onChange={() => onToggle(value)}
+              />
+              <span>
+                {value}
+                {counts !== undefined && (
+                  <span className="facet-count" aria-label={`${count} datasets`}>
+                    ({count})
+                  </span>
+                )}
+              </span>
+            </label>
+          );
+        })}
       </div>
     </fieldset>
   );
@@ -54,6 +70,7 @@ export default function FilterPanel({
   filters,
   onChange,
   options = defaultOptions,
+  facetCounts,
   collapsed = false,
   onToggle,
 }: FilterPanelProps) {
@@ -75,24 +92,34 @@ export default function FilterPanel({
           <fieldset className="filter-group">
             <legend>Access type</legend>
             <div className="checkbox-grid">
-              {options.accessTypes.map((value) => (
-                <label key={value} className="checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={filters.accessTypes.includes(value)}
-                    onChange={() =>
-                      update({ accessTypes: toggleListValue(filters.accessTypes, value) })
-                    }
-                  />
-                  <span>
-                    {value === 'open_access'
-                      ? 'Open access'
-                      : value === 'restricted'
-                        ? 'Restricted'
-                        : 'Application required'}
-                  </span>
-                </label>
-              ))}
+              {options.accessTypes.map((value) => {
+                const count = facetCounts?.accessTypes.get(value);
+                const disabled = facetCounts !== undefined && count === 0;
+                return (
+                  <label key={value} className={`checkbox-label${disabled ? ' disabled' : ''}`}>
+                    <input
+                      type="checkbox"
+                      checked={filters.accessTypes.includes(value)}
+                      disabled={disabled}
+                      onChange={() =>
+                        update({ accessTypes: toggleListValue(filters.accessTypes, value) })
+                      }
+                    />
+                    <span>
+                      {value === 'open_access'
+                        ? 'Open access'
+                        : value === 'restricted'
+                          ? 'Restricted'
+                          : 'Application required'}
+                      {facetCounts !== undefined && (
+                        <span className="facet-count" aria-label={`${count} datasets`}>
+                          ({count})
+                        </span>
+                      )}
+                    </span>
+                  </label>
+                );
+              })}
             </div>
           </fieldset>
 
@@ -178,6 +205,7 @@ export default function FilterPanel({
             label="Topic"
             values={options.topics}
             selected={filters.topics}
+            counts={facetCounts?.topics}
             onToggle={(value) => update({ topics: toggleListValue(filters.topics, value) })}
           />
 
@@ -185,6 +213,7 @@ export default function FilterPanel({
             label="Domain"
             values={options.domains}
             selected={filters.domains}
+            counts={facetCounts?.domains}
             onToggle={(value) => update({ domains: toggleListValue(filters.domains, value) })}
           />
 
@@ -192,6 +221,7 @@ export default function FilterPanel({
             label="Modality"
             values={options.modalities}
             selected={filters.modalities}
+            counts={facetCounts?.modalities}
             onToggle={(value) => update({ modalities: toggleListValue(filters.modalities, value) })}
           />
 
@@ -199,6 +229,7 @@ export default function FilterPanel({
             label="Country / region"
             values={options.countries}
             selected={filters.countries}
+            counts={facetCounts?.countries}
             onToggle={(value) => update({ countries: toggleListValue(filters.countries, value) })}
           />
 
@@ -206,6 +237,7 @@ export default function FilterPanel({
             label="License"
             values={options.licenses}
             selected={filters.licenses}
+            counts={facetCounts?.licenses}
             onToggle={(value) => update({ licenses: toggleListValue(filters.licenses, value) })}
           />
 
@@ -213,6 +245,7 @@ export default function FilterPanel({
             label="Repository"
             values={options.repositories}
             selected={filters.repositories}
+            counts={facetCounts?.repositories}
             onToggle={(value) =>
               update({ repositories: toggleListValue(filters.repositories, value) })
             }

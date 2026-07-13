@@ -28,6 +28,95 @@ function matchesSampleSize(
   return true;
 }
 
+type ListFilterKey =
+  | 'topics'
+  | 'domains'
+  | 'modalities'
+  | 'accessTypes'
+  | 'countries'
+  | 'licenses'
+  | 'repositories';
+
+export function applyFiltersExcept(
+  datasets: Dataset[],
+  filters: FilterState,
+  exclude: ListFilterKey[],
+): Dataset[] {
+  const next = { ...filters };
+  for (const key of exclude) {
+    next[key] = [];
+  }
+  return applyFilters(datasets, next);
+}
+
+export function computeFacetCounts(
+  searched: Dataset[],
+  filters: FilterState,
+): {
+  topics: Map<string, number>;
+  domains: Map<string, number>;
+  modalities: Map<string, number>;
+  accessTypes: Map<string, number>;
+  countries: Map<string, number>;
+  licenses: Map<string, number>;
+  repositories: Map<string, number>;
+} {
+  const countField = (
+    pool: Dataset[],
+    values: string[],
+    getter: (d: Dataset) => string[],
+  ): Map<string, number> => {
+    const counts = new Map<string, number>();
+    for (const value of values) {
+      counts.set(value, pool.filter((d) => getter(d).includes(value)).length);
+    }
+    return counts;
+  };
+
+  const options = collectFilterOptions(searched);
+
+  return {
+    topics: countField(
+      applyFiltersExcept(searched, filters, ['topics']),
+      options.topics,
+      (d) => d.topics,
+    ),
+    domains: countField(
+      applyFiltersExcept(searched, filters, ['domains']),
+      options.domains,
+      (d) => d.domains,
+    ),
+    modalities: countField(
+      applyFiltersExcept(searched, filters, ['modalities']),
+      options.modalities,
+      (d) => d.modalities,
+    ),
+    accessTypes: (() => {
+      const pool = applyFiltersExcept(searched, filters, ['accessTypes']);
+      const counts = new Map<string, number>();
+      for (const value of options.accessTypes) {
+        counts.set(value, pool.filter((d) => d.access_type === value).length);
+      }
+      return counts;
+    })(),
+    countries: countField(
+      applyFiltersExcept(searched, filters, ['countries']),
+      options.countries,
+      (d) => [d.country_or_region],
+    ),
+    licenses: countField(
+      applyFiltersExcept(searched, filters, ['licenses']),
+      options.licenses,
+      (d) => [d.license],
+    ),
+    repositories: countField(
+      applyFiltersExcept(searched, filters, ['repositories']),
+      options.repositories,
+      (d) => [d.repository],
+    ),
+  };
+}
+
 export function applyFilters(datasets: Dataset[], filters: FilterState): Dataset[] {
   return datasets.filter((dataset) => {
     if (filters.topics.length && !filters.topics.some((t) => dataset.topics.includes(t))) {

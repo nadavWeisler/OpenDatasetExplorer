@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { Dataset } from '../types/dataset';
 import { formatDate, formatSampleSize } from '../lib/filters';
+import FilterTag from './FilterTag';
 import { AccessBadge } from './SearchBar';
 
 interface DatasetCardProps {
@@ -21,9 +22,7 @@ export default function DatasetCard({ dataset }: DatasetCardProps) {
 
       <div className="tag-row">
         {dataset.topics.slice(0, 4).map((topic) => (
-          <span key={topic} className="tag">
-            {topic}
-          </span>
+          <FilterTag key={topic} facet="topic" value={topic} />
         ))}
         {dataset.topics.length > 4 && (
           <span className="tag muted">+{dataset.topics.length - 4} more</span>
