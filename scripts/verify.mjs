@@ -12,13 +12,16 @@ const datasetsPath = join(__dirname, '../src/data/datasets.json');
 const datasets = JSON.parse(readFileSync(datasetsPath, 'utf-8'));
 
 const SEARCH_KEYS = [
-  { name: 'name', weight: 0.3 },
-  { name: 'short_description', weight: 0.2 },
-  { name: 'topics', weight: 0.15 },
-  { name: 'tags', weight: 0.15 },
-  { name: 'modalities', weight: 0.1 },
-  { name: 'repository', weight: 0.05 },
-  { name: 'country_or_region', weight: 0.03 },
+  { name: 'name', weight: 0.25 },
+  { name: 'short_description', weight: 0.18 },
+  { name: 'topics', weight: 0.12 },
+  { name: 'tags', weight: 0.12 },
+  { name: 'domains', weight: 0.1 },
+  { name: 'modalities', weight: 0.08 },
+  { name: 'data_format', weight: 0.05 },
+  { name: 'notes', weight: 0.05 },
+  { name: 'repository', weight: 0.03 },
+  { name: 'country_or_region', weight: 0.02 },
   { name: 'citation', weight: 0.02 },
 ];
 
@@ -57,6 +60,8 @@ function assert(condition, message) {
   console.log(`PASS: ${message}`);
 }
 
+assert(datasets.length >= 30, `Catalog has at least 30 entries (found ${datasets.length})`);
+
 const depressionResults = searchDatasets('depression');
 assert(
   depressionResults.some((d) => d.id === 'uk-biobank'),
@@ -66,11 +71,31 @@ assert(
   depressionResults.some((d) => d.id === 'all-of-us'),
   'Search "depression" returns All of Us',
 );
+assert(
+  depressionResults.some((d) => d.id === 'nhanes'),
+  'Search "depression" returns NHANES',
+);
 
 const mriResults = searchDatasets('MRI');
 assert(
   mriResults.some((d) => d.id === 'openneuro'),
   'Search "MRI" returns OpenNeuro',
+);
+assert(
+  mriResults.some((d) => d.id === 'adni'),
+  'Search "MRI" returns ADNI',
+);
+
+const biodiversityResults = searchDatasets('biodiversity');
+assert(
+  biodiversityResults.some((d) => d.id === 'gbif'),
+  'Search "biodiversity" returns GBIF',
+);
+
+const linguisticsResults = searchDatasets('linguistics');
+assert(
+  linguisticsResults.some((d) => d.id === 'talkbank'),
+  'Search "linguistics" returns TalkBank',
 );
 
 const longitudinalResults = applyFilters(datasets, { longitudinal: true });
@@ -106,5 +131,15 @@ assert(
 const osfEntry = datasets.find((d) => d.id === 'osf');
 assert(osfEntry, 'OSF entry exists in catalog');
 assert(Array.isArray(osfEntry.see_also) && osfEntry.see_also.length > 0, 'OSF entry has see_also links');
+
+const mimicEntry = datasets.find((d) => d.id === 'mimic-iv');
+assert(mimicEntry, 'MIMIC-IV entry exists in catalog');
+assert(
+  mimicEntry.see_also?.some((l) => l.id === 'physionet'),
+  'MIMIC-IV links to PhysioNet in see_also',
+);
+
+const ids = datasets.map((d) => d.id);
+assert(ids.length === new Set(ids).size, 'All dataset IDs are unique');
 
 console.log('\nAll acceptance checks passed.');

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import type { AccessType } from '../types/dataset';
 import { formatAccessType } from '../lib/filters';
 
@@ -8,15 +9,33 @@ interface SearchBarProps {
 }
 
 export default function SearchBar({ value, onChange, resultCount }: SearchBarProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey) return;
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) {
+        return;
+      }
+      e.preventDefault();
+      inputRef.current?.focus();
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <div className="search-bar">
       <label htmlFor="dataset-search" className="visually-hidden">
         Search datasets
       </label>
       <input
+        ref={inputRef}
         id="dataset-search"
         type="search"
-        placeholder="Search by name, topic, modality, repository, citation…"
+        placeholder="Search by name, topic, modality, repository, citation… (press / to focus)"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         autoComplete="off"

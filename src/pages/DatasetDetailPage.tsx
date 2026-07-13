@@ -3,7 +3,11 @@ import { Link, useParams } from 'react-router-dom';
 import datasetsJson from '../data/datasets.json';
 import type { Dataset } from '../types/dataset';
 import { formatAccessType, formatDate, formatSampleSize } from '../lib/filters';
+import { findRelatedDatasets } from '../lib/related';
 import { AccessBadge } from '../components/SearchBar';
+import FilterTag from '../components/FilterTag';
+import PageMeta from '../components/PageMeta';
+import RelatedDatasets from '../components/RelatedDatasets';
 import SeeAlsoSection from '../components/SeeAlsoSection';
 
 const datasets = datasetsJson as Dataset[];
@@ -21,10 +25,12 @@ export default function DatasetDetailPage() {
   const { id } = useParams<{ id: string }>();
   const dataset = datasets.find((d) => d.id === id);
   const [copied, setCopied] = useState(false);
+  const related = dataset ? findRelatedDatasets(dataset, datasets) : [];
 
   if (!dataset) {
     return (
       <div className="container detail-page">
+        <PageMeta title="Dataset not found" description="The requested dataset could not be located in this catalog." />
         <div className="empty-state">
           <h2>Dataset not found</h2>
           <p>The requested dataset could not be located in this catalog.</p>
@@ -48,6 +54,8 @@ export default function DatasetDetailPage() {
 
   return (
     <div className="container detail-page">
+      <PageMeta title={dataset.name} description={dataset.short_description} />
+
       <nav className="breadcrumb" aria-label="Breadcrumb">
         <Link to="/">Explore</Link>
         <span aria-hidden="true">/</span>
@@ -88,17 +96,23 @@ export default function DatasetDetailPage() {
             <MetadataRow label="Topics">
               <div className="tag-row">
                 {dataset.topics.map((t) => (
-                  <span key={t} className="tag">
-                    {t}
-                  </span>
+                  <FilterTag key={t} facet="topic" value={t} />
                 ))}
               </div>
             </MetadataRow>
             <MetadataRow label="Domains">
-              {dataset.domains.join(', ')}
+              <div className="tag-row">
+                {dataset.domains.map((d) => (
+                  <FilterTag key={d} facet="domain" value={d} className="muted" />
+                ))}
+              </div>
             </MetadataRow>
             <MetadataRow label="Modalities">
-              {dataset.modalities.join(', ')}
+              <div className="tag-row">
+                {dataset.modalities.map((m) => (
+                  <FilterTag key={m} facet="modality" value={m} className="muted" />
+                ))}
+              </div>
             </MetadataRow>
             <MetadataRow label="Tags">
               <div className="tag-row">
@@ -147,6 +161,8 @@ export default function DatasetDetailPage() {
           <h2>Citation</h2>
           <blockquote className="citation-block">{dataset.citation}</blockquote>
         </section>
+
+        <RelatedDatasets datasets={related} />
 
         {dataset.see_also && dataset.see_also.length > 0 && (
           <SeeAlsoSection links={dataset.see_also} />
